@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="newgr">
+  <head>
+    <script src="/files/angular_min.js">
+        </script>
+    <script src="/files/angular_cookies_min.js">
+
+
+    </script>
+    <script src="newgroup.js">
+
+    </script>
+    <link rel="stylesheet" href="/files/bootstrap_min.css" >
+
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    textarea {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+    .form-control {
+      font-size: 16px;
+      height: auto;
+
+    }
+
+    input[type="text"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .ex1 {
+    width: 50%;
+    height: 150px;
+    overflow: auto;
+}
+input[type=text] {
+    width: 50%;
+
+}
+
+
+
+
+
+    </style>
+  </head>
+  <body ng-controller="groupCrtl">
+
+    <form class="form-signin" ng-submit="action()">
+      <h1 class="form-signin-heading">Meeting Details: </h1><br>
+
+      <label for="Email1"><strong>Meeting Name: </strong></label>
+      <input id="Email1" type="text" class="form-control" ng-model="meetingname" placeholder="Group Name" required>
+      <label for="Email2"><strong>Subject : </strong></label>
+      <input id="Email2" type="text" class="form-control" ng-model="subject" placeholder="Subject" required>
+
+      <div>
+      <span>
+      <p><strong>Level1:</strong></p>
+        <input type="text" placeholder="Search Level1.." ng-model='Search.username'>
+      <div class="ex1">
+    <div class="form-check" ng-repeat="item in level1 | orderBy:'username' | filter:Search" ng-if="(item.username)!=logged" >
+    <input class="form-check-input" type="checkbox" ng-change="sync(bool,item)" ng-checked="isChecked(item._id)" ng-model="bool" id="defaultCheck1">
+      {{item.username}}
+    </div>
+
+    </div>
+    </span>
+    <span><p><strong>Level2:</strong></p>
+      <input type="text" placeholder="Search Level2.." ng-model='Search1.username'>
+    <div class="ex1">
+    <div class="form-check" ng-repeat="item in level2 | orderBy:'username' | filter:Search1" ng-if="(item.username)!=logged" >
+    <input class="form-check-input" type="checkbox" ng-change="sync(bool,item)" ng-checked="isChecked(item._id)" ng-model="bool" id="defaultCheck1">
+    {{item.username}}
+    </div>
+
+    </div></span>
+    </div>
+<label><strong>Date:</strong></label>
+<input type="date" ng-model="date" value="date">
+<label><strong>Time:</strong></label>
+<input type="time" id="exampleInput" name="input" ng-model="value"
+       placeholder="HH:mm:ss" required /><br>
+<label for="agenda"><strong>Agenda:</strong></label><br>
+<textarea ng-model="agenda" name="name" rows="3" cols="60"></textarea>
+<div>
+  <span>
+<input type="submit" name="Submit" value="Submit">
+</span>
+</div>
+</form>
+
+
+
+
+
+  </body>
+</html>

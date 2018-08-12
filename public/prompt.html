@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="prom">
+  <head>
+    <script src="/files/angular_min.js">
+        </script>
+    <script src="/files/angular_cookies_min.js">
+
+
+    </script>
+    <script src="./javascripts/prompt.js">
+
+    </script>
+    <link rel="stylesheet" href="/files/bootstrap_min.css" >
+
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    textarea {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+    .form-control {
+      font-size: 16px;
+      height: auto;
+
+    }
+
+    input[type="text"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .ex1 {
+    width: 50%;
+    height: 150px;
+    overflow: auto;
+}
+input[type=text] {
+    width: 50%;
+
+}
+
+
+
+
+
+    </style>
+  </head>
+  <body ng-controller="promCrtl">
+
+    <form class="form-signin" ng-submit="action1()">
+      <h1 class="form-signin-heading">Prompt Details: </h1><br>
+
+      <label for="agenda"><strong>Message:</strong></label><br>
+      <textarea ng-model="message" name="name" rows="3" cols="60"></textarea>
+
+     <p><strong>Select Contacts:</strong></p>
+     <input type="text" placeholder="Search.." ng-model='Search.username'>
+     <div class="ex1">
+   <div class="form-check" ng-repeat="item in level1 |orderBy:'username'| filter:Search" ng-if="(item.username)!=logged">
+    <input  type="radio"  id="receiver" name='recid' ng-click='add(item)' ng-if="(item.username)!=logged">
+    {{item.firstname}} {{item.lastname}}
+    </div>
+
+</div>
+
+
+
+  <span>
+<input type="submit" name="Submit" value="Submit">
+</span>
+
+
+</form>
+
+
+
+
+
+  </body>
+</html>

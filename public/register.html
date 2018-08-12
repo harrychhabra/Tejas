@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="regs"  ng-controller="regCrtl">
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style1.css">
+    <meta charset="utf-8">
+    <title>login page</title>
+    <link rel="stylesheet" href="/files/bootstrap_min.css" >
+    <link rel="stylesheet" href="/stylesheets/style1.css">
+    <link rel="stylesheet" href="/files/bootstrap_min.css" >
+    <script src="/files/angular_min.js">
+    </script>
+          <script src="/files/angular_cookies_min.js">
+
+          </script>
+    <script src="./javascripts/register.js"></script>
+    <!-- <link rel="stylesheet" href="E:\tejas\conFusionServer\public\stylesheets\login.css"> -->
+  </head>
+  <body >
+    <div class="login-form">
+    <div class="close"> </div>
+        <div class="head">
+        </div>
+        <div class="head-info">
+          <h1>FILL DETAILS</h1>
+        </div>
+    <div class="wrapper">
+      <form class="form-signin" ng-submit="check()" method="post">
+
+        <input type="text" class="form-control"  ng-model="username" placeholder="Userid" required="" autofocus=""  />
+        <input type="text" class="form-control" ng-model="firstname" placeholder="First Name" required="" autofocus="" />
+        <input type="text" class="form-control" ng-model="middlename" placeholder="Middle Name"  autofocus="" />
+
+        <input type="text" class="form-control" ng-model="lastname" placeholder="Last Name" required="" autofocus="" />
+        <input type="email" class="form-control" ng-model="email" placeholder="Email" required="" autofocus="" />
+        <input type="text" class="form-control" ng-model="designation" placeholder="Designation" required="" autofocus="" />
+        <div class="select" style="color:rgb(132,127,127);">
+              <!-- <h2 style="rgb(201, 201, 201); font-size:20px; margin-left:5%;">LEVEL:</h2><br> -->
+              <input type="radio" ng-model="level1" value="true" > Level I
+  <input type="radio" ng-model="level1" value="false"> Level II
+</div>
+        <input type="password" class="form-control" ng-model="password" placeholder="Password" required=""/>
+
+      <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

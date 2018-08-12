@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="rprom">
+<script src="/files/angular_min.js">
+    </script>
+<script src="/files/angular_cookies_min.js">
+
+</script>
+<script src="/files/jquery_slim_min.js" ></script>
+<script src="/files/umd_popper_min.js" ></script>
+
+
+<script src="/javascripts/recentprompt.js">
+
+</script>
+  <head>
+    <link rel="stylesheet" href="files/bootstrap_min.css" >
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="rpromCrtl">
+    <div class="container">
+      <h1>Prompt information</h1><br>
+      <table  class="table table-hover">
+         <thead>
+           <th>id</th>
+        <th>Sent To</th>
+        <th>Content</th>
+        <th>status</th>
+        <th>reply</th>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="item in obj">
+          <!-- <th scope="row"></th> -->
+          <td>{{$index +1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.message}}</td>
+          <th>{{item.status}}</th>
+          <td><button type="button" ng-click="action2(item)" class="btn btn-primary" name="button">+accept</button></td>
+
+        </tr>
+
+      </tbody>
+      </table>
+
+      </table>
+      <br>
+
+
+
+    </div>
+
+  </body>
+</html>

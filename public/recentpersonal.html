@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="chatpersonal" ng-controller="perCrtl">
+  <head>
+    <script src="/files/angular_min.js">
+        </script>
+    <script src="/files/angular_cookies_min.js">
+
+    </script>
+    <script src="./javascripts/chatpersonal.js">
+    </script>
+    <link rel="stylesheet" href="/files/bootstrap_min.css" >
+    <script src="/files/jquery_slim_min.js" ></script>
+<script src="/files/umd_popper_min.js" ></script>
+<script src="files/bootstrap_min.js" ></script>
+  <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body >
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Officer Name</th>
+      <th scope="col">Open Chat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in obj">
+      <!-- <th scope="row"></th> -->
+      <td>{{$index +1}}</td>
+      <td>{{sho(item)}}</td>
+      <td><button type="button" ng-click="action(item)" class="btn btn-primary" name="button">+ Open Chat</button></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+  </body>
+</html>

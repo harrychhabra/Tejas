@@ -1,0 +1,142 @@
+
+<html ng-app="logi" >
+  <head>
+    <script src="/files/angular_min.js">
+      </script>
+  <script src="/files/angular_cookies_min.js">
+
+  </script>
+  <script src="mainlv2.js">
+
+  </script>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/files/bootstrap_min.css" >
+    <script src="files/jquery_slim_min.js" ></script>
+<script src="files/umd_popper_min.js" ></script>
+<script src="/files/bootstrap_min.js" ></script>
+
+
+
+    <meta charset="utf-8">
+    <title>Tejas Messaging App</title>
+  <link rel="shortcut icon" href="/images/Tejas_Logo.png" type="image/png">
+    <link rel="stylesheet" href="./stylesheets/login.css">
+  </head>
+  <!-- <body style="background : white" ng-controller="loginCrtl" > -->
+  <body style="background:white;" ng-controller="loginCrtl" onload="checkFirstVisit()">
+
+
+    <div class="maint">
+
+
+      <div class="sidenav">
+
+    <div class="container">
+
+<span id="hello" title="Click to display information">
+    <a id="name" ng-click="auser()" href="detailslv2.html" target ="aframe" style="text-align:center; ">
+       {{obj.firstname | uppercase}} {{obj.lastname | uppercase}}</a>
+    </span>
+
+  <form  action="prompt.html" target="aframe">
+
+    <span title="Create a prompt">
+  <button id="group" type="submit"  style="margin-left=6%;" class="btn btn-primary" >+Prompt</button>
+  </span>
+  </form>
+
+   <h3 style="text-align:left">Contacts:</h3>
+
+  <p><strong>Level1</strong></p>
+  <input type="text" placeholder="Search.." ng-model='Search.username'>
+
+<div class="ex1">
+<ul id="lit">
+<li ng-repeat="item in level1 | filter:Search" ng-if="(item.username)!=obj.username">
+  <button type="button"  ng-click="gen(item)"><a href="detailslv2.html" target ="aframe">{{item.username}}</a></button><li>
+
+</ul> </div>
+<br>
+
+    </div>
+  </div>
+  <div class="main">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+  <a class="navbar-brand" href="/mainlv2.html">
+  <img src="/images/Tejas_Logo.png" width="40" height="40" class="d-inline-block align-top" alt="">  TEJAS
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link"  target="aframe" href="recentpersonal.html" >Personal Chats<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" target="aframe" ng-click="action()" href="/groupchats.html">Meetings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" target="aframe"  href="/noti.html">Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" target="aframe" ng-click="getprompt()" href="/recentpromptslv2.html">Prompts</a>
+      </li>
+  <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="temp.html">Disabled</a>
+      </li> -->
+    </ul>
+    <a class="nav-link mx-right" style="text-align:center; color:#c2c8d1;">    {{date | date:'dd-MM-yyyy'}}
+/{{ clock | date:'HH:mm:ss'}}</a>
+
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn btn-outline-success my-2 my-sm-0" ><a href="bot.html" target="aframe">Cisco Help! </a> </button>
+&nbsp;
+
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="login.html" onclick="my()">Logout</a></button>
+      <script>
+      function my(){
+        alert("You logged out");
+      }
+
+      </script>
+    </form>
+    </div>
+    </nav>
+    </div>
+
+
+    <div id="box" class="container"style="width: 770px; height: 800px; overflow: hidden;">
+
+
+      <iframe id="aframe" name="aframe" scrollbar="hidden" style="margin-left:0%; width: 788px; height:818px; border:none;">
+
+</iframe>
+    </div>
+
+
+    <div class="box2">
+      <h2>  <ul>
+        <li>Alerts:</li>
+      </ul> </h2>
+  <div class="container">
+    <marquee style="height:220px;" direction="up" onmouseover="this.setAttribute('scrollamount', 0, 0);this.stop()" onmouseout="this.setAttribute('scrollamount', 3, 0);this.start()" scrollamount="4">
+
+                                <table class="table table-striped">
+                                  <tbody>
+        <tr ng-repeat='item in uniquenote '><td style="padding-top:10px; padding-bottom:10px; ">
+          <a ng-href="noti.html" role="button" target="aframe">{{item.name | uppercase}} : {{item.text}} <img src="http://www.nitj.ac.in//images/New.gif"> </a></td></tr>
+                                                              </tbody>
+                        </table>
+                      </marquee>
+
+    </div></div>
+
+
+
+
+  </body>
+</html>

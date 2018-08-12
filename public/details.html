@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="details">
+<script src="/files/angular_min.js">
+    </script>
+<script src="/files/angular_cookies_min.js">
+
+</script>
+<script src="/files/jquery_slim_min.js" ></script>
+<script src="/files/umd_popper_min.js" ></script>
+
+
+<script src="details.js">
+
+</script>
+  <head>
+    <link rel="stylesheet" href="files/bootstrap_min.css" >
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="detailsCrtl">
+    <div class="container">
+      <h1>Personal Information</h1><br>
+      <table  >
+
+        <tr>
+          <td>First Name</td>
+          <td>: {{dfname}}</td>
+        </tr>
+
+                <tr>
+                  <td>Middle Name</td>
+                  <td>: {{dmname}}</td>
+                </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>: {{dlname}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>: {{dmail}}</td>
+        </tr>
+        <tr>
+          <td>Designation</td>
+          <td>: {{desg}}</td>
+        </tr>
+
+      </table>
+      <br>
+      <form ng-submit="gener()">
+
+       <button  type="submit" ng-hide="{{print}}" class="btn btn-primary" >+ Personal Chat</button><br><br>
+     </form>
+
+
+    </div>
+
+  </body>
+</html>
